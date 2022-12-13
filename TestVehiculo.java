@@ -19,6 +19,8 @@ class TestVehiculo {
         //Crear un segundo vehiculo
         Vehiculo auto2 = new Vehiculo(2018, "Mazda", "CX-3", "azul", 4);
 
+        auto2.setColor("plateado");
+
         // System.out.println("Marca auto1: "+auto1.marca);
         // System.out.println("Marca auto2: "+auto2.marca);
         System.out.println("Marca auto1: "+ auto1.getMarca() );
@@ -37,6 +39,9 @@ class TestVehiculo {
 
         auto2.imprimir();
 
+        int cantVeh = bicicleta.getCantidadVehiculos();
+
+        System.out.println("Cantidad Vehiculos:"+cantVeh);
 
     }
 

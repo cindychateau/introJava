@@ -5,9 +5,11 @@ class Vehiculo {
     private String color;
     private int ruedas;
 
+    private static int cantidadVehiculos = 0; //Una variable estática se comparte entre todas las instancias de la clase
+
     /*Método constructor: La que crea la instancia de Vehiculo */
     public Vehiculo() {
-        
+        cantidadVehiculos++;
     }
     
     /*Sobrecargamos el método constructor  
@@ -16,6 +18,7 @@ class Vehiculo {
     */
     public Vehiculo(String color) {
         this.color = color;
+        cantidadVehiculos++;
     }
     /*
     color = "amarilla"
@@ -26,6 +29,7 @@ class Vehiculo {
     public Vehiculo(String color, int ruedas) {
         this.color = color;
         this.ruedas = ruedas;
+        cantidadVehiculos++;
     }
 
     /*
@@ -41,6 +45,7 @@ class Vehiculo {
        this.modelo = modelo; //auto2.modelo = "CX-3"
        this.color = color; //auto2.color = "azul"
        this.ruedas = ruedas; //auto2.ruedas = 4
+       cantidadVehiculos++;
     }
 
     /*Función para imprimir 
@@ -49,10 +54,12 @@ class Vehiculo {
         System.out.println("Año:"+this.anio+" Marca:"+this.marca+" Modelo:"+this.modelo+" Color:"+this.color+" Ruedas:"+this.ruedas);
     }
 
+    /* GETTER - me regresa el valor del atributo */
     public int getAnio() {
         return this.anio;
     }
 
+    /* SETTER - Recibe un valor y lo guarda en el atributo */
     public void setAnio(int anio) {
         this.anio = anio;
     }
@@ -87,6 +94,10 @@ class Vehiculo {
 
     public void setRuedas(int ruedas) {
         this.ruedas = ruedas;
+    }
+
+    public static int getCantidadVehiculos() {
+        return cantidadVehiculos;
     }
 
 }
